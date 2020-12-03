@@ -32,7 +32,7 @@
 <h2>Wiring Diagram</h2>
   <img src="WiringDiagram.png" width="600" height="500" alt="hi">
 <h2>C# GUI</h2>
-  <p>Something goes here about how the GUI was set up.</p>
+  <p>In the GUI, you can choose the COM port for the SD card to read in the song library and select what song you would like to listen to. After making your selection, the GUI then displays the song name while the song is playing.</p>
   <pre> 
     <code> 
       #include<stdio.h> 
@@ -42,7 +42,7 @@
     </code> 
   </pre>
 <h2>mbed Setup and FFT</h2>
-  <p>We have 2 threads in our program. One that that takes in data from the C# GUI and plays the music selection on the speaker and another that runs an FFT analysis on the music and then determines what frequency bin that the output falls into and displays it. In order to do the FFT analysis on the data we ran into some issues grabbing data in the form of an array from our .wav file in order to run this through the FFT library that we were using. To fix this issue, we had to first create an .txt file containing an array of values from the .wav file and place this on our SD card. From there, we were able to … </p>
+  <p>We have 2 threads in our program. One that that takes in data from the C# GUI and plays the music selection on the speaker and another that runs an FFT analysis on the music and then determines what frequency bin that the output falls into and displays it. In order to do the FFT analysis on the data we ran into some issues grabbing data in the form of an array from our .wav file in order to run this through the FFT library that we were using. To fix this issue, we had to first create an .txt file containing an array of values from the .wav file using the WAVToCode software and place this on our SD card. From there, we were able to sample the data and perform our calculations for the output.</p>
   <pre> 
     <code> 
       #include<stdio.h> 
