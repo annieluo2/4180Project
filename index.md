@@ -3,7 +3,7 @@
 
 
 # Project Description
-For this project, we developed a music controller that consisted of a C# GUI and an mbed setup. In the GUI, the user can select a song from a library of options stored on the SD card and based upon this selection, a FFT analysis is performed on the .wav file and the output is displayed on an 8x8 LED display. For the display, we created 5 different outputs that would be shown based upon the frequency range that was outputted from the FFT analysis. In order to accomplish all of these parts at once, RTOS was used to thread each component.
+For our project, we decided to create a music controller with an equalizer display. A number of small audio samples were placed in an SD card as .wav files to then be analyzed using Fast Fourier Transforms from within the mbed. The resulting frequency ratios were used to create 5 different outputs shown on the 8x8 LED matrix display that served as a visual representation of what was coming out of the speaker at that point in time. A C# GUI created in Visual Studio was used to select a song from the list stored in the SD card, which allowed the user to have control over what was being played.
 
 
 ## Library Used
@@ -499,4 +499,4 @@ int main()
 ### Demonstration
 [![FFT Equalizer Demo](http://img.youtube.com/vi/_YG1I_EaH9k/0.jpg)](http://www.youtube.com/watch?v=_YG1I_EaH9k "FFT Equalizer Demo")
 ### Presentation 
-[![ Grosjean's Accident](http://img.youtube.com/vi/EyTeDaiUL6s/0.jpg)](http://www.youtube.com/watch?v=EyTeDaiUL6s " Grosjean's Accident")
+[![FFT Equalizer Presentation](http://img.youtube.com/vi/gh7g6DiaTOI/0.jpg)](http://www.youtube.com/watch?v=gh7g6DiaTOI "FFT Equalizer Presentation")
