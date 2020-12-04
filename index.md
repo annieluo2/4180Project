@@ -175,7 +175,7 @@ using System;
 
 
 ## mbed Setup and FFT
-We have 2 threads in our program. One that that takes in data from the C# GUI and plays the music selection on the speaker and another that runs an FFT analysis on the music and then determines what frequency bin that the output falls into and displays it. In order to do the FFT analysis on the data we ran into some issues grabbing data in the form of an array from our .wav file in order to run this through the FFT library that we were using. To fix this issue, we had to first create an .txt file containing an array of values from the .wav file using the WAVToCode software and place this on our SD card. From there, we were able to sample the data and perform our calculations for the output.
+We have 2 threads in our program. One that that takes in data from the C# GUI and plays the music selection on the speaker and another that runs an FFT analysis on the music and then determines what frequency bin that the output falls into and displays it. In order to do the FFT analysis on the data we ran into some issues grabbing data in the form of an array from our .wav file in order to run this through the FFT library that we were using. To fix this issue, we had to first create an .txt file containing an array of values from the .wav file using the WAVToCode software and turn these into global variables to access from within the code. From there, we were able to sample the data and perform our calculations for the output.
 
 ```
 #include "mbed.h"
@@ -266,9 +266,6 @@ const int off[8][8] = {
     0, 0, 0, 0, 0, 0, 0, 0
 };
  
- 
- 
- 
 void display_fft(float sample[])
 {
  
@@ -306,7 +303,6 @@ void display_fft(float sample[])
             }
             matrix.writeDisplay();
             Thread::wait(10);
-            //wait(.15);
             break;
  
         case(2): // CASE HIGH
@@ -320,9 +316,7 @@ void display_fft(float sample[])
             }
             matrix.writeDisplay();
             Thread::wait(10);
-            //wait(.15);
- 
- 
+            break;
  
         case(3): // CASE MEDIUM
             matrix.clear();
@@ -335,7 +329,6 @@ void display_fft(float sample[])
             }
             matrix.writeDisplay();
             Thread::wait(10);
-            //wait(.15);
             break;
  
         case(4): // CASE LOW
@@ -362,7 +355,6 @@ void display_fft(float sample[])
             }
             matrix.writeDisplay();
             Thread::wait(10);
-            //wait(.15);
             break;
  
         default:
@@ -438,15 +430,13 @@ void speaker_thread(void const* args)
         Thread::wait(1000);
     }
  
-}
- 
+} 
  
 int main()
 {
     //starting thread
     Thread th1(speaker_thread);
-    Thread th2(display_thread);
-    
+    Thread th2(display_thread);    
     
     char c;
     while(1) {
