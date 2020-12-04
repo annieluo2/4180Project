@@ -495,7 +495,8 @@ int main()
 ```
 
 
-## Video Demonstration
-[![Audi R8](http://img.youtube.com/vi/KOxbO0EI4MA/0.jpg)](https://www.youtube.com/watch?v=KOxbO0EI4MA "Audi R8")
-
+## Videos
+### Demonstration
+[![FFT Equalizer Demo](http://img.youtube.com/vi/_YG1I_EaH9k/0.jpg)](http://www.youtube.com/watch?v=_YG1I_EaH9k "FFT Equalizer Demo")
+### Presentation 
 [![ Grosjean's Accident](http://img.youtube.com/vi/EyTeDaiUL6s/0.jpg)](http://www.youtube.com/watch?v=EyTeDaiUL6s " Grosjean's Accident")
